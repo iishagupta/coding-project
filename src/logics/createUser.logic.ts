@@ -10,6 +10,7 @@ export class CreateUserLogic {
 
     async execute() {
         try {
+            await this.validate();
             const userDetails = {
                 name: this.name,
                 email: this.email
@@ -25,6 +26,7 @@ export class CreateUserLogic {
 
         } catch(e) {
             console.log(`Error in CreateUserLogic.execute: ${e}`);
+            throw e;
         }
     }
 

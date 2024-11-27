@@ -83,14 +83,23 @@ eventSchema.statics.findEventsForMultipleUsers = async function(userIds: string[
 }
 
 eventSchema.statics.addBlock = async function(userId: ObjectId, newBlock: ITimeBlock) {
+    let setQuery: any = {
+        $push: {
+            blocks: newBlock
+        }
+    }
+    if(!newBlock) {
+        /** set empty array */
+        setQuery = {
+            $set: {
+                blocks: []
+            }
+        }
+    }
     return this.updateOne(
         {
             userId
-        }, {
-            $push: {
-                blocks: newBlock
-            }
-        });
+        }, setQuery, {upsert: true});
 }
 
 eventSchema.statics.setAvailableSlots = async function(userId: ObjectId, slots: IAvailableSlot[]) {

@@ -61,6 +61,10 @@ This API provides a flexible calendar booking system with user-specific availabi
 - Meetings can be scheduled with users in and out of the org
 - if user has mentioned available slots - it is a hard pass on any other slots.
 
+## Hacks
+- Passing emailId in headers for a few validations instead of authentication
+- used renderer for deployment
+
 ## Future Enhancements
 - Notification system for event requests
 - Timezone management
