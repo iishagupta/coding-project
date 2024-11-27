@@ -65,3 +65,9 @@ This API provides a flexible calendar booking system with user-specific availabi
 
 ## Postman Doc URL
 - https://documenter.getpostman.com/view/21104624/2sAYBViBrF
+
+
+## Hosted on:
+- https://calendly-sm8z.onrender.com
+- This is a free tier and can be slow, kindly reach out to me if its not working
+- Repo can be cloned and postman docs can be refered to hit the APIs locally in the worst case scenario
