@@ -4,7 +4,7 @@ import { SlotsUtilSController } from './controllers/slotsUtils.controller';
 const app = express();
 import { DatabaseConnection } from './database/dbConnection';
 import { UserController } from './controllers/user.contoller';
-DatabaseConnection.getInstance();
+DatabaseConnection.connect();
 const port = 3000;
 
 // JSON body parser

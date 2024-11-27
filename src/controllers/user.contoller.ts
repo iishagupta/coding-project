@@ -12,7 +12,6 @@ export class UserController {
             }
         }
         try {
-            console.log(req);
             const { name, email } = req.body;
             if(!name || !email) {
                 throw { status: 400, message: "Please provide a name and email" };
