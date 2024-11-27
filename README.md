@@ -55,6 +55,12 @@ This API provides a flexible calendar booking system with user-specific availabi
   - Provides conflict warnings
   - Allows flexible booking with user consent
 
+## Assumptions
+- Users are on the same tz i.e UTC
+- Conflicts while blocking a calendar is acceptable and the user gets a choice to accept the meeting
+- Meetings can be scheduled with users in and out of the org
+- if user has mentioned available slots - it is a hard pass on any other slots.
+
 ## Future Enhancements
 - Notification system for event requests
 - Timezone management
