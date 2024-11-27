@@ -10,4 +10,5 @@ export interface IUser {
 export interface IUserModel {
     createUser(userDetails: IUser): Promise<IUser>;
     getUserByEmail(email: string): Promise<IUser>;
+    get(search: string): Promise<IUser[]>;
 }

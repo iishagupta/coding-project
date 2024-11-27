@@ -27,4 +27,11 @@ export class CreateUserLogic {
             console.log(`Error in CreateUserLogic.execute: ${e}`);
         }
     }
+
+    async validate() {
+        const existingUser = await UserModel.getUserByEmail(this.email);
+        if(existingUser) {
+            throw {status: 400, message: "User with this email already exists"};
+        }
+    }
 }

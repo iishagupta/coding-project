@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/user',  UserController.create);
+app.get('/users', UserController.get);
 
 app.get('/:userId/get-slots', SlotsUtilSController.getAvailableSlots);
 

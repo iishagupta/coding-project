@@ -24,3 +24,18 @@ userSchema.statics.createUser = async function(userDetails: IUser) {
 userSchema.statics.getUserByEmail = async function(email: string) {
     return this.findOne({email}).lean();
 }
+
+userSchema.statics.get = async function(search: string) {
+    let filter = {};
+
+    if(search) {
+        /** regex search */
+        filter = {
+            $or: [
+                {name: {$regex: search, $options: "i"}},
+                {email: {$regex: search, $options: "i"}}
+            ]
+        }
+    }
+    return this.find(filter).lean();
+}
